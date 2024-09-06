@@ -6,7 +6,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ..utils.utils_bbox import dist2bbox, make_anchors
+from utils.utils_bbox import dist2bbox, make_anchors
 
 
 def select_candidates_in_gts(xy_centers, gt_bboxes, eps=1e-9, roll_out=False):

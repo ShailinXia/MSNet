@@ -8,7 +8,6 @@ from utils.utils import get_classes
 from utils.utils_map import get_coco_map, get_map
 from yolo import YOLO
 
-os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
 
 if __name__ == "__main__":
@@ -33,9 +32,7 @@ if __name__ == "__main__":
     #   一般情况下与训练和预测所用的classes_path一致即可
     #--------------------------------------------------------------------------------------#
     classes_path    = 'model_data/nwpu_voc_classes.txt'
-    # classes_path    = 'model_data/dior_voc_classes.txt'
-    # classes_path    = '../../Datasets/HRRSD/hrrsd_voc_classes.txt'
-    # classes_path    = '../../Datasets/RSOD/rsod_voc_classes.txt'
+    
     #--------------------------------------------------------------------------------------#
     #   MINOVERLAP用于指定想要获得的mAP0.x，mAP0.x的意义是什么请同学们百度一下。
     #   比如计算mAP0.75，可以设定MINOVERLAP = 0.75。
@@ -74,17 +71,15 @@ if __name__ == "__main__":
     #   指向VOC数据集所在的文件夹
     #   默认指向根目录下的VOC数据集
     #-------------------------------------------------------#
-    # VOCdevkit_path  = 'VOCdevkit'
-    # VOCdevkit_path  = 'D://Datasets//DIOR/VOCdevkit'
+    # 请修改路径为自己的数据集路径
     VOCdevkit_path  = 'D://Datasets//NWPU/VOCdevkit'
-    # VOCdevkit_path  = 'D://Datasets//HRRSD/VOCdevkit'
-    # VOCdevkit_path  = 'D://Datasets//RSOD/VOCdevkit'
+    
     #-------------------------------------------------------#
     #   结果输出的文件夹，默认为map_out
     #-------------------------------------------------------#
     map_out_path    = 'map_out'
 
-    image_ids = open(os.path.join(VOCdevkit_path, "VOC2007/ImageSets/Main1/test.txt")).read().strip().split()
+    image_ids = open(os.path.join(VOCdevkit_path, "VOC2007/ImageSets/Main/test.txt")).read().strip().split()
     
     if not os.path.exists(map_out_path):
         os.makedirs(map_out_path)

@@ -18,7 +18,7 @@ Shailin Xia<sup><span>2,🌟</span></sup>,
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-PR-blue)](https://www.sciencedirect.com/science/article/abs/pii/S0031320323009020) [![Project](https://img.shields.io/badge/Project-GitHub-gold)](https://github.com/ShailinXia/MSNet)
+[![Paper](https://img.shields.io/badge/Paper-PR-blue)](https://www.sciencedirect.com/science/article/pii/S0031320324007349) [![Project](https://img.shields.io/badge/Project-GitHub-gold)](https://github.com/ShailinXia/MSNet)
 </div>
 
 ---
@@ -116,7 +116,14 @@ python predict.py
 If you find this project useful in your research, please consider citing:
 
 ```
-
+@article{GAO2024110983,
+title = {MSNet: Multi-Scale Network for Object Detection in Remote Sensing Images},
+journal = {Pattern Recognition},
+pages = {110983},
+year = {2024},
+issn = {0031-3203},
+doi = {https://doi.org/10.1016/j.patcog.2024.110983}
+}
 ```
 
 ## Contact us

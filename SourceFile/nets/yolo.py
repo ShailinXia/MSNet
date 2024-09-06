@@ -7,10 +7,10 @@ from matplotlib import pyplot as plt
 import time
 import torchvision.transforms as transforms
 
-from ..nets.backbone import Backbone, C2f, Conv
-from ..nets.yolo_training import weights_init
-from ..utils.utils_bbox import make_anchors
-from ..nets.CreativePoints import *
+from nets.backbone import Backbone, C2f, Conv
+from nets.yolo_training import weights_init
+from utils.utils_bbox import make_anchors
+from nets.CreativePoints import *
 
 
 

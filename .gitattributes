@@ -2,8 +2,4 @@ SourceFile/logs/dior/best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
 SourceFile/logs/hrrsd/best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
 SourceFile/logs/nwpu/best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
 SourceFile/logs/rsod/best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
-SourceFile/pretrained/yolov8_l_backbone_weights.pth filter=lfs diff=lfs merge=lfs -text
-SourceFile/pretrained/yolov8_m_backbone_weights.pth filter=lfs diff=lfs merge=lfs -text
-SourceFile/pretrained/yolov8_n_backbone_weights.pth filter=lfs diff=lfs merge=lfs -text
-SourceFile/pretrained/yolov8_s_backbone_weights.pth filter=lfs diff=lfs merge=lfs -text
 SourceFile/pretrained/yolov8_x_backbone_weights.pth filter=lfs diff=lfs merge=lfs -text

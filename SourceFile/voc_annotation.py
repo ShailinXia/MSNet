@@ -35,7 +35,7 @@ train_percent       = 0.75
 #   默认指向根目录下的VOC数据集
 #-------------------------------------------------------#
 VOCdevkit_path  = 'D:/Datasets/NWPU/VOCdevkit'
-
+Year_path = "D:/Datasets/NWPU"
 VOCdevkit_sets  = [('2007', 'train'), ('2007', 'val')]
 classes, _      = get_classes(classes_path)
 
@@ -114,7 +114,7 @@ if __name__ == "__main__":
         type_index = 0
         for year, image_set in VOCdevkit_sets:
             image_ids = open(os.path.join(VOCdevkit_path, 'VOC%s/ImageSets/Main/%s.txt'%(year, image_set)), encoding='utf-8').read().strip().split()
-            list_file = open('%s_%s.txt'%(year, image_set), 'w', encoding='utf-8')
+            list_file = open(os.path.join(Year_path, '%s_%s.txt'%(year, image_set)), 'w', encoding='utf-8')
             for image_id in image_ids:
                 list_file.write('%s/VOC%s/JPEGImages/%s.jpg'%(os.path.abspath(VOCdevkit_path), year, image_id))
 

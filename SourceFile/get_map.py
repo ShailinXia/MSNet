@@ -34,7 +34,7 @@ if __name__ == "__main__":
     classes_path    = 'model_data/nwpu_voc_classes.txt'
     
     #--------------------------------------------------------------------------------------#
-    #   MINOVERLAP用于指定想要获得的mAP0.x，mAP0.x的意义是什么请同学们百度一下。
+    #   MINOVERLAP用于指定想要获得的mAP0.x。
     #   比如计算mAP0.75，可以设定MINOVERLAP = 0.75。
     #
     #   当某一预测框与真实框重合度大于MINOVERLAP时，该预测框被认为是正样本，否则为负样本。

@@ -84,7 +84,61 @@ h5py==2.10.0
 ```
 
 ## Train and test
-MSNet is trained on NWPU, RSOD, DIOR, HRRSD datasets, prepare them for training and testing. You can also use your datasets, meanwhile change the path to yours.
+MSNet is trained on NWPU, RSOD, DIOR, HRRSD datasets, prepare them for training and testing.
+
+Please download the datasets by yourself and put them in the corresponding directory. 
+The directory structure is as follows:
+
+```
+├─Datasets
+│  ├─NWPU
+│  │  ├─VOCdevkit
+│  │  │  ├─VOC2007
+│  │  │  │  ├─Annotations
+│  │  │  │  ├─ImageSets
+│  │  │  │  ├─JPEGImages
+|  |  ├─2007_train.txt
+|  |  ├─2007_val.txt
+│  ├─DIOR
+│  │  ├─VOCdevkit
+│  │  │  ├─VOC2007
+│  │  │  │  ├─Annotations
+│  │  │  │  ├─ImageSets
+│  │  │  │  ├─JPEGImages
+|  |  ├─2007_train.txt
+|  |  ├─2007_val.txt
+│  ├─HRRSD
+│  │  ├─VOCdevkit
+│  │  │  ├─VOC2007
+│  │  │  │  ├─Annotations
+│  │  │  │  ├─ImageSets
+│  │  │  │  ├─JPEGImages
+|  |  ├─2007_train.txt
+|  |  ├─2007_val.txt
+│  ├─RSOD
+│  │  ├─VOCdevkit
+│  │  │  ├─VOC2007
+│  │  │  │  ├─Annotations
+│  │  │  │  ├─ImageSets
+│  │  │  │  ├─JPEGImages
+|  |  ├─2007_train.txt
+|  |  ├─2007_val.txt
+├─image
+├─SourceFiles
+```
+And then, you need to modify some parameters in the `voc_annotation.py` file.
+
+```python
+annotation_mode     = 0
+classes_path        = 'model_data/nwpu_voc_classes.txt' # your classes path
+trainval_percent    = 1                                 # your trainval_percent
+train_percent       = 0.75                              # your train_percent
+VOCdevkit_path      = 'D:/Datasets/NWPU/VOCdevkit'	# your VOCdevkit path
+Year_path           = "D:/Datasets/NWPU"		# your dataset path
+```
+
+Run the `voc_annotation.py` file and generate the `train` and `val` files.
+
 
 After that, you can train and test the MSNet by
 
@@ -92,6 +146,46 @@ After that, you can train and test the MSNet by
 cd SourceFile
 
 python train.py [--parameters]
+```
+
+or you can set these parameters in the `train.py` file.
+
+```python
+    Cuda                = True
+    seed                = 3407
+    distributed         = False
+    sync_bn             = False
+    fp16                = False
+    classes_path        = 'model_data/nwpu_voc_classes.txt'
+    model_path          = 'model_data/yolov8_l.pth'
+    input_shape         = [640, 640]
+    phi                 = 'l'
+    pretrained          = False
+    mosaic              = True
+    mosaic_prob         = 0.5
+    mixup               = True
+    mixup_prob          = 0.5
+    special_aug_ratio   = 0.7
+    label_smoothing     = 0
+    Init_Epoch          = 0
+    Freeze_Epoch        = 50
+    Freeze_batch_size   = 32
+    UnFreeze_Epoch      = 400
+    Unfreeze_batch_size = 8
+    Freeze_Train        = False
+    Init_lr             = 1e-3
+    Min_lr              = Init_lr * 0.01
+    optimizer_type      = "adam"
+    momentum            = 0.937
+    weight_decay        = 0
+    lr_decay_type       = "cos"
+    save_period         = 10
+    save_dir            = 'logs/nwpu'
+    eval_flag           = True
+    eval_period         = 100
+    num_workers         = 4
+    train_annotation_path   = 'annotation_path/NWPU/2007_train.txt'
+    val_annotation_path     = 'annotation_path/NWPU/2007_val.txt'
 ```
 
 ## Results
@@ -103,6 +197,20 @@ cd SourceFile
 python get_map.py [--parameters]
 ```
 
+or you can set these parameters in the `get_map.py` file.
+
+```python
+    map_mode        = 0
+    classes_path    = 'model_data/nwpu_voc_classes.txt'
+    MINOVERLAP      = 0.5
+    confidence      = 0.001
+    nms_iou         = 0.5
+    score_threhold  = 0.5
+    map_vis         = False
+    VOCdevkit_path  = 'D://Datasets//NWPU/VOCdevkit'
+    map_out_path    = 'map_out'
+```
+
 ## Quick test
 pre-trained weights can be found at SourceFile/logs, meanwhile change the path to yours. you can test the MSNet by
 
@@ -110,6 +218,24 @@ pre-trained weights can be found at SourceFile/logs, meanwhile change the path t
 cd SourceFile
 
 python predict.py
+```
+
+or you can set these parameters in the `predict.py` file.
+
+```python
+    mode = "dir_predict"
+    crop            = False
+    count           = False
+    video_path      = 0
+    video_save_path = ""
+    video_fps       = 25.0
+    test_interval   = 100
+    fps_image_path  = ""
+    dir_origin_path = "img/"
+    dir_save_path   = "img_out/"
+    heatmap_save_path = "model_data/heatmap_vision.png"
+    simplify        = True
+    onnx_save_path  = "model_data/models.onnx"
 ```
 
 ## Citation
@@ -123,6 +249,9 @@ pages = {110983},
 year = {2024},
 issn = {0031-3203},
 doi = {https://doi.org/10.1016/j.patcog.2024.110983}
+url = {https://www.sciencedirect.com/science/article/pii/S0031320324007349},
+author = {Tao Gao and Shilin Xia and Mengkun Liu and Jing Zhang and Ting Chen and Ziqi Li},
+keywords = {Small object detection, Multi-scale object detection, Feature representation, Deep feature fusion}
 }
 ```
 

@@ -1,0 +1,13 @@
+airplane
+baseball diamond
+basketball court
+bridge
+crossroad
+ground track field
+harbor
+parking lot
+ship
+storage tank
+T junction
+tennis court
+vehicle

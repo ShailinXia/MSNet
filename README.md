@@ -75,11 +75,11 @@ torch
 torchvision
 tensorboard
 scipy==1.2.1
-numpy==1.17.0
+numpy==1.22.0
 matplotlib==3.1.2
-opencv-python==4.1.2.30
-tqdm==4.60.0
-pillow==8.2.0
+opencv_python==4.1.2.30
+tqdm==4.66.3
+Pillow==10.3.0
 h5py==2.10.0
 ```
 

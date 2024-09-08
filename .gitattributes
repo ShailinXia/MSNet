@@ -1,1 +1,5 @@
+SourceFile/model_data/dior_best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
+SourceFile/model_data/hrrsd_best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
+SourceFile/model_data/nwpu_best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
+SourceFile/model_data/rsod_best_epoch_weights.pth filter=lfs diff=lfs merge=lfs -text
 

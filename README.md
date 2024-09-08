@@ -39,13 +39,13 @@ Remote sensing object detection (RSOD) encounters challenges in effectively extr
 
 The architecture of MSNet is shown as follows:
 <div style="text-align: center;">
-	<img src="image/structure.png" alt="structure" width="800">
+	<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0031320324007349-gr3.jpg" alt="structure" width="800">
 </div>
 <br>
 
 The architecture of P<sup>2</sup>CEB is shown as follows:
 <div style="text-align: center;">
-	<img src="image/P2CEB.png" alt="P2CEM" width="800">
+	<img src="	https://ars.els-cdn.com/content/image/1-s2.0-S0031320324007349-gr4.jpg" alt="P2CEM" width="800">
 </div>
 
 ## Comparison with other methods

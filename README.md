@@ -224,7 +224,7 @@ python predict.py
 or you can set these parameters in the `predict.py` file.
 
 ```python
-    mode = "dir_predict"
+    mode            = "dir_predict"
     crop            = False
     count           = False
     video_path      = 0

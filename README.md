@@ -134,8 +134,8 @@ annotation_mode     = 0
 classes_path        = 'model_data/nwpu_voc_classes.txt' # your classes path
 trainval_percent    = 1                                 # your trainval_percent
 train_percent       = 0.75                              # your train_percent
-VOCdevkit_path      = 'D:/Datasets/NWPU/VOCdevkit'	# your VOCdevkit path
-Year_path           = "D:/Datasets/NWPU"		# your dataset path
+VOCdevkit_path      = '{Your VOCdevkit path}'	        # your VOCdevkit path
+Year_path           = "{Your Dataset path}"		        # your dataset path
 ```
 
 Run the `voc_annotation.py` file and generate the `train` and `val` files.
@@ -185,8 +185,8 @@ or you can set these parameters in the `train.py` file.
     eval_flag           = True
     eval_period         = 100
     num_workers         = 4
-    train_annotation_path   = 'annotation_path/NWPU/2007_train.txt'
-    val_annotation_path     = 'annotation_path/NWPU/2007_val.txt'
+    train_annotation_path   = '{Your train annotation path}'
+    val_annotation_path     = '{Your val annotation path}'
 ```
 
 ## Results
@@ -208,7 +208,7 @@ or you can set these parameters in the `get_map.py` file.
     nms_iou         = 0.5
     score_threhold  = 0.5
     map_vis         = False
-    VOCdevkit_path  = 'D://Datasets//NWPU/VOCdevkit'
+    VOCdevkit_path  = '{Your VOCdevkit path}'
     map_out_path    = 'map_out'
 ```
 

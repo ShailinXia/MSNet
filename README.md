@@ -135,7 +135,7 @@ classes_path        = 'model_data/nwpu_voc_classes.txt' # your classes path
 trainval_percent    = 1                                 # your trainval_percent
 train_percent       = 0.75                              # your train_percent
 VOCdevkit_path      = '{Your VOCdevkit path}'	        # your VOCdevkit path
-Year_path           = "{Your Dataset path}"		        # your dataset path
+Year_path           = "{Your Dataset path}"		# your dataset path
 ```
 
 Run the `voc_annotation.py` file and generate the `train` and `val` files.
